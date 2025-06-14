@@ -1,15 +1,23 @@
-from flask import flask, render_template
+from flask import Flask, render_template
+app = Flask(__name__)
 
-app = flask(__name__)
 
-app.route('/')
+@app.route('/')
 def index():
     return render_template("index.html")
 
-app.route('/login')
+@app.route('/login')
 def index():
     return render_template("login.html")
 
-app.route('/register')
+@app.route('/register')
 def index():
     return render_template("register.html")
+
+@app.route('/profile')
+def index():
+    return render_template("profile.html")
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8000, debug=True)
+ 
